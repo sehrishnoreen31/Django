@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Home page!</h1>
+    <nav class="nav-bar">
+        <div class="logo">Organic</div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Contents</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>THE ORGANIC<br><span>PLANTS</span></h1>
+            <p class="details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, voluptates? Tempore amet eius esse distinctio, explicabo possimus beatae autem perferendis iste a adipisci, voluptatem unde eveniet corrupti vel et dignissimos?</p>
+            <p class="price">$99</p>
+            <button class="order">Order Now</button>
+        </div>
+        <div class="hero-img">
+            <img src="{% static 'product.png' %}" alt="">
+        </div>
+    </section>
 </body>
 </html>

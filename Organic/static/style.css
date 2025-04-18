@@ -1,4 +1,96 @@
 *{
-    background-color: black;
-    color: white
+    background-color: rgb(254, 255, 244);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    & .nav-bar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        & .logo{
+            max-width: 4rem;
+            max-height: 4rem;
+            color: orange;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        & .nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            & li a{
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: green;
+                &:hover{
+                    color: rgb(47, 190, 47);
+                    scale: 1.2;
+                }
+            }
+        }
+    }
+    .hero{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        & .hero-text{
+            max-width: 500px;
+            min-width: 300px;
+            & h1{
+                color: rgb(255, 0, 0);
+                font-size: 2rem;
+                font-weight: 400;
+                & span{
+                    color: green;
+                    font-weight: 600;
+                }
+            }
+            & .details{
+                margin-top: 10px;
+                color: rgb(83, 82, 82);
+                text-align: justify;
+            }
+            & .price{
+                margin-top: 10px;
+                font-size: 2rem;
+                font-weight: 600;
+                color: orangered;
+            }
+            & .order{
+                margin-top: 10px;
+                background-color: green;
+                outline: none;
+                width: 6rem;
+                padding: 5px;
+                color: rgb(254, 255, 244);
+                border-color: transparent;
+                font-size: 15px;
+                font-weight: 500;
+                &:hover{
+                    background-color: rgb(47, 190, 47);
+                }
+            }
+        }
+        & .hero-img{
+            & img{
+                width: 25rem;
+                height: 25rem;
+            }
+        }
+    }
 }
