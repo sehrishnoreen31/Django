@@ -11,6 +11,7 @@ body{
     padding: 1rem 2rem;
     max-width: 1200px;
     & .nav-bar{
+        margin-top: 5px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -36,7 +37,6 @@ body{
                 color: green;
                 &:hover{
                     color: rgb(47, 190, 47);
-                    scale: 1.2;
                 }
             }
         }
@@ -83,6 +83,7 @@ body{
                 font-weight: 500;
                 &:hover{
                     background-color: rgb(47, 190, 47);
+                    font-weight: 700;
                 }
             }
         }
