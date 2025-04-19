@@ -4,20 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+    
 </head>
 <body>
+    {% block nav %}
     <nav class="nav-bar">
         <div class="logo">Organic</div>
         <div class="nav">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Contents</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Order Now</a></li>
             </ul>
         </div>
     </nav>
+    {% endblock %}
 </body>
 </html>
