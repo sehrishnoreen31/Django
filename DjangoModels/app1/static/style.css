@@ -14,11 +14,3 @@ img{
     flex-wrap: wrap;
     gap: 1rem;
 }
-
-.user{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: nowrap;
-}
