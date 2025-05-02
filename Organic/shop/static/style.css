@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color:rgb(255, 255, 255);
+    background-image: url(Images/bg2.jpeg);
+    filter:brightness(50px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(50px);
+}
+
+header{
+    padding: 10px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+header h1{
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    color:rgb(241, 118, 36);
+    font-size: 30px;
+}
+
+header h1 span{
+    color: rgb(255, 255, 255);
+}
+
+header nav{
+    padding: 10px;
+}
+
+header nav ul{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color: transparent;
+}
+
+header nav ul li:hover{
+    scale: 1.03;
+}
+
+header nav ul li a{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    font-weight: 600;
+    &:hover{
+        color: rgb(247, 189, 150);
+        border-bottom: 2px solid rgb(235, 155, 102);
+    }
+}
+
+.items{
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: flex-start;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.items .item{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: rgba(94, 42, 7, 0.705);
+    backdrop-filter: blur(50px);
+    &:hover{
+        scale: 1.02 ;
+    }
+}
+
+.item img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item .detail{
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:rgb(255, 255, 255);
+    font-weight: 600;
+}
+    
+.item .price-date{
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:rgb(255, 255, 255);
+}
+
+.item button{
+    padding: 5px 10px;
+    background-color: rgb(190, 89, 21);
+    outline: none;
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 600;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(153, 95, 58);
+    }
+}
+
+footer{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(145, 145, 145, 0.349);
+    backdrop-filter: blur(5px);
+}
+
+footer p{
+    color: rgba(255, 255, 255, 0.959);
+    text-align: center;
+    padding: 20px;
+}
