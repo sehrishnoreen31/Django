@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(2, 2, 34));
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 15rem;
+    align-items: start;
+    background-image: url(./Images/bg3.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    padding: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+}
+
+header nav{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(243, 243, 250);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1300px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.container .blog-post{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding: 10px;
+    max-width: 300px;
+    &:hover{
+        scale: 1.03;
+    }
+}
+
+.blog-post img{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px 2px rgba(131, 131, 131, 0.151);
+}
+
+
+.blog-post a{
+    text-decoration: none;
+    color: rgb(243, 243, 250);
+}
+
+.blog-post .upload-date{
+    color: rgb(158, 158, 158);
+    padding: 5px 0;
+}
+
+.blog-post button{
+    padding: 5px 10px;
+    color:rgb(2, 2, 34);
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    border-color: transparent;
+    max-width: 5rem;
+    border-radius: 5px;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(199, 199, 199);
+    }
+}
+
