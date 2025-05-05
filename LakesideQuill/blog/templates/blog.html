@@ -13,19 +13,20 @@
         <header>
             <h1>Lakeside Quill - Blog</h1>
             <nav>
-                <a href="">Blog</a>
-                <a href="">Contact</a>
-                <a href="">Login</a>
+                <a href="{% url "blog" %}">Blog</a>
+                <a href="{% url "contact" %}">Contact</a>
+                <a href="{% url "about" %}">About</a>
             </nav>
         </header>
 
         <div class="container">
             {% for blog in blogs %}
                 <div class="blog-post">
-                    <img src="{{blog.image}}" alt="lake-image">
+                    <img src="{{blog.image.url}}" alt="lake-image">
                     <p class="upload-date">{{blog.date}}</p>
                     <h2 class="title"><a href="">{{blog.title}}</a></h2>
-                    <button>Read</button>
+                    <a href="{% url 'details' blog.id %}"><button>Read</button></a>
+                    
                 </div>
             {% endfor %}
         </div>
