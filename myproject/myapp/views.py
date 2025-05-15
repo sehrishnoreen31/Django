@@ -4,8 +4,16 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    text = 'This a django app'
-    return HttpResponse(text)
+    return render(request, 'index.html')
+
+def products(request):
+    return render(request, 'products.html')
+
+def admin(request):
+    return render(request, 'admin.html')
+
+def customers(request):
+    return render(request, 'customers.html')
 
 def viewArticle(request, articleId):
     text = f'Article Number: {articleId}'
@@ -22,3 +30,4 @@ def viewSentence(request, sentenceText):
 def viewDate(request, month, year):
     text = f'Date: {month, year}'
     return HttpResponse(text)
+    
