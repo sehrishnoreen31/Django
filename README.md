@@ -1,2 +1,2 @@
 # Django
-Django Apps - IBM Django Application Development with SQL and Databases
+Django Apps - Django Application Development with SQL and Databases
