@@ -13,3 +13,13 @@ class Employee(models.Model):
     def __str__(self):
         return self.empname
     
+class Dreamreals(models.Model):
+    website = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    mail = models.EmailField(max_length=254)
+    phonenumber = models.CharField(max_length=50)
+    class Meta:
+        db_table = 'dreamreal'
+    def __str__(self):
+        return self.name
+    
