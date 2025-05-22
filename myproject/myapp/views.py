@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Dreamreals
-
+from .forms import DreamRealsForm
 # Create your views here.
 
 def home(request):
@@ -93,9 +93,6 @@ def form_add_new(request):
         return HttpResponse(f'Added a record! {str(new_obj)}')
     return render(request, 'form.html')
 
-
-
-    
 
 
 
