@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static "style.css" %} ">
+    <title>Customers</title>
+</head>
+<body>
+        {% block content %}
+            <h1>Form Page - Django App</h1>
+            <form action="{% url 'form_add_new' %}" method="post">
+                {% csrf_token %}
+                <p><label for="website">Enter url:</label></p>
+                <input type="text" name="website" id="website">
+                <p><label for="name">Website Name:</label></p>
+                <input type="text" name="name" id="name">
+                <p><label for="mail">Email:</label></p>
+                <input type="email" name="mail" id="mail">
+                <p><label for="phone-number">Phone Number:</label></p>
+                <input type="tel" name="phone-number" id="phone-number"><br>
+                <input type="submit" value="ok">
+            </form>
+        {% endblock %}
+    
+
+</body>
+</html>
