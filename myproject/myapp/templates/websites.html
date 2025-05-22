@@ -12,8 +12,12 @@
 
     {% block content %}
         <h1>Products Page - Django App</h1>
-        <p>Websites CRUD Operations</p>
-        <p>{{result}}</p>
+        <h2>Websites</h2>
+        
+        {% for website in websites %}
+            <p>{{forloop.counter}} - {{website}}</p>
+        {% endfor %}
+            
     {% endblock %}
 
 </body>

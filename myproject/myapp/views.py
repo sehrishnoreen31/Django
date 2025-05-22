@@ -7,8 +7,9 @@ from .forms import DreamRealsForm
 def home(request):
     return render(request, 'index.html')
 
-def products(request):
-    return render(request, 'products.html')
+def websites(request):
+    all_websites = Dreamreals.objects.all()
+    return render(request, 'websites.html', {'websites': all_websites})
 
 def admin(request):
     return render(request, 'admin.html')
