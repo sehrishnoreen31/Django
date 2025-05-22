@@ -90,7 +90,7 @@ def form_add_new(request):
         # create new object from these details
         new_obj = Dreamreals(website=wb, name=nm, mail=ml, phonenumber=pn)
         new_obj.save()
-        return HttpResponse('Added a record!')
+        return HttpResponse(f'Added a record! {str(new_obj)}')
     return render(request, 'form.html')
 
 
