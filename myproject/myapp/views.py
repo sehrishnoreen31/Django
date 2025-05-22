@@ -80,7 +80,7 @@ def viewDate(request, month, year):
 
 #     return render(request, 'web.html', {'result': result})
     
-
+# insert operation
 def form_add_new(request):
     if request.method == 'POST':
         wb = request.POST['website']
