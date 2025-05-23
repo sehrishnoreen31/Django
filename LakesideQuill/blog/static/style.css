@@ -158,21 +158,24 @@ nav a{
     padding: 20px;
     max-width: 500px;
     margin: 10px auto;
-    background-color:transparent;
-    box-shadow: 3px 3px 3px 3px #006a6727;
+    background-color: transparent;
+    border: 1px solid #006a673b;
+    border-radius: 10px;
+    color: rgb(49, 48, 48);
 }
 
 .form-data input[type='text']{
-    margin-top: 5px;
+    margin: 5px 0;
     padding: 5px 10px;
-    background-color: #006a6727;
+    background-color: #006a6715;
     border-color: transparent;
     border-radius: 5px;
     outline: none;
+    width: 100%;
 }
 
 .form-data input[type='file']{
-    margin-top: 5px;
+    margin: 5px 0;
     padding: 5px 10px;
     background-color: transparent;
     border-color: transparent;
@@ -180,12 +183,13 @@ nav a{
 }
 
 .form-data textarea{
-    margin-top: 5px;
+    margin: 5px 0;
     padding: 5px 10px;
-    background-color: #006a6727;
+    background-color: #006a6715;
     border-color: transparent;
     border-radius: 5px;
     outline: none;
+    width: 100%;
 }
 
 .form-data input[type='submit']{
