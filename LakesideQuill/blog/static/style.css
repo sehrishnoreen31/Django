@@ -12,6 +12,7 @@ body{
 }
 
 header{
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,6 +147,60 @@ nav a{
 
 .about ul{
     padding: 0 20px;
+}
+
+.message{
+    background-color: #006a6727;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form-data{
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color:transparent;
+    box-shadow: 3px 3px 3px 3px #006a6727;
+}
+
+.form-data input[type='text']{
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #006a6727;
+    border-color: transparent;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-data input[type='file']{
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+}
+
+.form-data textarea{
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #006a6727;
+    border-color: transparent;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-data input[type='submit']{
+    padding: 5px 10px;
+    color:#fffade;
+    background-color: #006A67;
+    font-size: 16px;
+    font-weight: 600;
+    border-color: transparent;
+    max-width: 5rem;
+    border-radius: 5px;
+    &:hover{
+        cursor: pointer;
+        background-color: #054947;
+    }
 }
 
 footer{

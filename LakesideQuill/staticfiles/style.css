@@ -7,7 +7,8 @@
 
 body{
     margin: 0 auto;
-    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(2, 2, 34));
+    background-color: #fffceb;
+    background-repeat: no-repeat;
 }
 
 header{
@@ -26,7 +27,7 @@ header{
 
 h1{
     padding: 30px;
-    color: rgb(255, 255, 255);
+    color: rgb(243, 243, 250);
     font-size: 3rem;
 }
 
@@ -48,8 +49,9 @@ nav a{
 .container{
     margin: 0 auto;
     max-width: 1300px;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
+    flex-direction: row-reverse;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
@@ -70,27 +72,27 @@ nav a{
 
 .blog-post img{
     width: 250px;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 3px 3px 2px 2px rgba(131, 131, 131, 0.151);
+    box-shadow: 3px 3px 2px 2px rgba(131, 131, 131, 0.281);
 }
 
 
 .blog-post a{
     text-decoration: none;
-    color: rgb(243, 243, 250);
+    color: #003161;
 }
 
 .blog-post .upload-date{
-    color: rgb(158, 158, 158);
+    color: rgb(107, 107, 107);
     padding: 5px 0;
 }
 
 .blog-post a button{
     padding: 5px 10px;
-    color:rgb(2, 2, 34);
-    background-color: rgb(255, 255, 255);
+    color:#fffade;
+    background-color: #006A67;
     font-size: 16px;
     font-weight: 600;
     border-color: transparent;
@@ -98,13 +100,95 @@ nav a{
     border-radius: 5px;
     &:hover{
         cursor: pointer;
-        background-color: rgb(199, 199, 199);
+        background-color: #054947;
     }
 }
 
-.blog-detail{
+.detail{
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
-    width: 300px !important;
+    max-width: 1000px;
+}
 
+.detail h2{
+    color: #003161;
+    text-align: center;
+}
+
+.blog-detail{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: rgb(49, 48, 48);
+    text-align: justify;
+}
+
+.blog-detail img{
+    width: 70%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px 2px rgba(131, 131, 131, 0.281);;
+}
+
+.contact{
+    flex-direction: column;
+}
+
+.about{
+    flex-direction: column;
+}
+
+.about ul{
+    padding: 0 20px;
+}
+
+.form-data {
+    margin: 0 auto !important;
+    background-color: #fffceb !important;
+    box-shadow: 3px 3px 3px 3px rgba(119, 117, 117, 0.397) !important;
+}
+
+.form-data input[type="text"] {
+    padding: 10px !important;
+    background-color: white !important;
+    border: 1px solid black !important; /* Add a border to see if it's there */
+}
+
+.form-data input[type="file"] {
+    padding: 5px !important;
+    border: 1px solid green !important; /* Add a border to see if it's there */
+}
+
+.form-data textarea {
+    padding: 10px !important;
+    width: 90% !important; /* Reduce width slightly to see if it changes */
+    box-sizing: border-box !important;
+    border: 1px solid red !important; /* Add a border to see if it's there */
+}
+
+.form-data input[type="submit"] {
+    padding: 10px 20px !important;
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+
+footer{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(243, 243, 250);
+    background-color: #003161;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }

@@ -1,35 +1,12 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {% static "style.css" %} ">
-    <title>{{blog.title}}</title>
-</head>
-<body>
-    <main>
-        <header>
-            <h1>Lakeside Quill - Blog</h1>
-            <nav>
-                <a href="{% url "blog" %}">Blog</a>
-                <a href="{% url "contact" %}">Contact</a>
-                <a href="{% url "about" %}">About</a>
-            </nav>
-        </header>
-        <div class="container detail">
-            <h2>{{blog.title}}</h2>
-            <div class="blog-detail">
-                <img src="{{blog.image.url}}" alt="lake-image">
-                <p>{{blog.paragraph}}</p>
-                <p>{{blog.date}}</p>
+{% extends "blog.html" %}
+{% block title %}<title>{{blog.title}}</title>{% endblock %}
+        {% block content %}
+            <div class="container detail">
+                <h2>{{blog.title}}</h2>
+                <div class="blog-detail">
+                    <img src="{{blog.image.url}}" alt="lake-image">
+                    <p>{{blog.paragraph}}</p>
+                    <p>{{blog.date}}</p>
+                </div>
             </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>@sehrishnoreen-portfolio</p>
-    </footer>
-</body>
-</html>
+        {% endblock %}

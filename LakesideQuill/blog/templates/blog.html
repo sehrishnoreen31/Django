@@ -1,36 +1,37 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {% static "style.css" %} ">
-    <title>Lakeside Quill</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% block title %}<title>Lakeside Quill</title>{% endblock %}
 </head>
 <body>
     <main>
         <header>
             <h1>Lakeside Quill - Blog</h1>
             <nav>
-                <a href="{% url "blog" %}">Blog</a>
-                <a href="{% url "contact" %}">Contact</a>
-                <a href="{% url "about" %}">About</a>
+                <a href="{% url 'blog' %}">Blog</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'add_blog' %}">Add Blog</a>
             </nav>
         </header>
 
-        <div class="container">
-            {% for blog in blogs %}
-                <div class="blog-post">
-                    <img src="{{blog.image.url}}" alt="lake-image">
-                    <p class="upload-date">{{blog.date}}</p>
-                    <h2 class="title"><a href="">{{blog.title}}</a></h2>
-                    <a href="{% url 'details' blog.id %}"><button>Read</button></a>
-                    
-                </div>
-            {% endfor %}
-        </div>
-
+        {% block content %}
+            <div class="container">
+                {% for blog in blogs %}
+                    <div class="blog-post">
+                        <img src="{{blog.image.url}}" alt="lake-image">
+                        <p class="upload-date">{{blog.date}}</p>
+                        <h2 class="title"><a href="">{{blog.title}}</a></h2>
+                        <a href="{% url 'details' blog.id %}"><button>Read</button></a>
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        {% endblock %}
     </main>
 
     <footer>

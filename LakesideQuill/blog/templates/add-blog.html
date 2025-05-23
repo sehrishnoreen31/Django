@@ -1,0 +1,25 @@
+{% extends "blog.html" %}
+{% block title %}<title>Add Blog</title>{% endblock %}
+{% block content %}
+
+<div class="message">
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+<div class="form-data">
+    <form action="{% url 'add_blog' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p><label for="title">Blog Title:</label></p>
+        <input type="text" name="title" id="title" placeholder="Blog Title" required>
+        <p><label for="blog-img">Blog Image:</label></p>
+        <input type="file" name="blog-img" id="blog-img" placeholder="Blog Image" required>
+        <p><label for="blog-content">Blog Content:</label></p>
+        <textarea name="blog-content" id="blog-content" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+{% endblock %}

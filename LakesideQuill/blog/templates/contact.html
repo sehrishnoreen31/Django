@@ -1,38 +1,13 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {% static "style.css" %} ">
-    <title>Lakeside Quill</title>
-</head>
-<body>
-    <main>
-        <header>
-            <h1>Lakeside Quill - Blog</h1>
-            <nav>
-                <a href="{% url "blog" %}">Blog</a>
-                <a href="{% url "contact" %}">Contact</a>
-                <a href="{% url "about" %}">About</a>
-            </nav>
-        </header>
-        <div class="container contact">
-            <h2>Let's Connect</h2>
-            <p>Thank you for visiting <a href="{% url "blog" %}">Lakeside Quill</a>, where the serene beauty of lakes meets thoughtful storytelling. Whether you have questions, collaboration ideas, or just want to share your love for nature, I’d love to hear from you!</p>
-            <h3>Email Me:</h3><span><a href="">sehrishnoreen31@gmail.com</a></span>
-            <h3>Why Reach Out?</h3>
-            <p><b>Guest Posts:</b> Interested in collaborating on a lakes/nature-themed article?</p>
-            <p><b>Photography:</b> Share your lake photos for potential features!</p>
-            <p><b>Questions:</b> Curious about my writing process or a specific blog topic?</p>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>@sehrishnoreen-portfolio</p>
-    </footer>
-    <script src="{% static "script.js" %}"></script>
-</body>
-</html>
+{% extends "blog.html" %}
+{% block title %}<title>Contact</title>{% endblock %}
+        {% block content %}
+            <div class="container contact">
+                <h2>Let's Connect</h2>
+                <p>Thank you for visiting <a href="{% url "blog" %}">Lakeside Quill</a>, where the serene beauty of lakes meets thoughtful storytelling. Whether you have questions, collaboration ideas, or just want to share your love for nature, I’d love to hear from you!</p>
+                <h3>Email Me:</h3><span><a href="">sehrishnoreen31@gmail.com</a></span>
+                <h3>Why Reach Out?</h3>
+                <p><b>Guest Posts:</b> Interested in collaborating on a lakes/nature-themed article?</p>
+                <p><b>Photography:</b> Share your lake photos for potential features!</p>
+                <p><b>Questions:</b> Curious about my writing process or a specific blog topic?</p>
+            </div>
+        {% endblock %}

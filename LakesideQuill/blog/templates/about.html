@@ -1,49 +1,24 @@
-{% load static %}
+{% extends "blog.html" %}
+{% block title %}<title>About</title>{% endblock %}
+        {% block content %}
+            <div class="container about">
+                <h2>Welcome to Lakeside Quill</h2>
+                <p>Hi there! I'm Sehrish Noreen, the voice and vision behind <a href="{% url "blog" %}">Lakeside Quill</a>, a blog where the tranquil beauty of lakes meets thoughtful storytelling. Through words and images, I explore the magic of lakes: their ecosystems, cultural significance, and the quiet inspiration they offer.</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {% static "style.css" %} ">
-    <title>Lakeside Quill</title>
-</head>
-<body>
-    <main>
-        <header>
-            <h1>Lakeside Quill - Blog</h1>
-            <nav>
-                <a href="{% url "blog" %}">Blog</a>
-                <a href="{% url "contact" %}">Contact</a>
-                <a href="{% url "about" %}">About</a>
-            </nav>
-        </header>
-        <div class="container about">
-            <h2>Welcome to Lakeside Quill</h2>
-            <p>Hi there! I'm Sehrish Noreen, the voice and vision behind <a href="{% url "blog" %}">Lakeside Quill</a>, a blog where the tranquil beauty of lakes meets thoughtful storytelling. Through words and images, I explore the magic of lakes: their ecosystems, cultural significance, and the quiet inspiration they offer.</p>
+                <h3>Why Lakes?</h3>
+                <p>Lakes have always been my sanctuary. Whether it’s the mirror-like stillness at dawn or the playful ripples of a summer breeze, these waters tell stories. Here, I share:</p>
+                <ul>
+                    <li><p><b>Ecosystem Insights:</b> The delicate balance of life in and around lakes.</p></li>
+                    <li><p><b>Travel & Reflections:</b> Visits to serene lakeshores and what they teach us.</p></li>
+                    <li><p><b>Conservation:</b> Simple ways to protect these precious natural resources.</p></li>
+                </ul>
 
-            <h3>Why Lakes?</h3>
-            <p>Lakes have always been my sanctuary. Whether it’s the mirror-like stillness at dawn or the playful ripples of a summer breeze, these waters tell stories. Here, I share:</p>
-            <ul>
-                <li><p><b>Ecosystem Insights:</b> The delicate balance of life in and around lakes.</p></li>
-                <li><p><b>Travel & Reflections:</b> Visits to serene lakeshores and what they teach us.</p></li>
-                <li><p><b>Conservation:</b> Simple ways to protect these precious natural resources.</p></li>
-            </ul>
-
-            <h3>My Journey</h3>
-            <p>As a front-end developer (and nature enthusiast), I blend my love for clean design with a passion for the outdoors. When I’m not coding, you’ll find me:</p>
-            <ul>
-                <li><p>📸 Capturing lake landscapes.</p></li>
-                <li><p>📖 Researching folklore about water bodies.</p></li>
-                <li><p>✍️ Writing to bridge nature and technology.</p></li>
-            </ul>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>@sehrishnoreen-portfolio</p>
-    </footer>
-    <script src="{% static "script.js" %}"></script>
-</body>
-</html>
+                <h3>My Journey</h3>
+                <p>As a front-end developer (and nature enthusiast), I blend my love for clean design with a passion for the outdoors. When I’m not coding, you’ll find me:</p>
+                <ul>
+                    <li><p>📸 Capturing lake landscapes.</p></li>
+                    <li><p>📖 Researching folklore about water bodies.</p></li>
+                    <li><p>✍️ Writing to bridge nature and technology.</p></li>
+                </ul>
+            </div>
+        {% endblock %}
