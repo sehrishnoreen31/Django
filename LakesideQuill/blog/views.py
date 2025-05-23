@@ -28,5 +28,5 @@ def add_new_blog(request):
         new_blog = Blog(title=ttl, image=img, paragraph=content)
         new_blog.save()
         messages.success(request, f'Added the blog "{new_blog.title}"')
-        return redirect('add_blog')
+        return redirect('add_new_blog')
     return render(request, 'add-blog.html')

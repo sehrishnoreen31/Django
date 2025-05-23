@@ -150,14 +150,14 @@ nav a{
 }
 
 .message{
-    background-color: #006a6727;
+    color: #069731f5;
     max-width: 500px;
     margin: 0 auto;
 }
 .form-data{
     padding: 20px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color:transparent;
     box-shadow: 3px 3px 3px 3px #006a6727;
 }
