@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparison Results</title>
+</head>
+<body>
+    <h1>UI Comparison Result</h1>
+
+    <p><strong>SSIM Score:</strong> {{ ssim_score }}</p>
+    <p><strong>Total Pixels:</strong> {{ total_pixels }}</p>
+    <p><strong>Changed Pixels:</strong> {{ changed_pixels }}</p>
+    <p><strong>Percentage Changed:</strong> {{ percent_changed }}%</p>
+
+    <h3>Regions of Change:</h3>
+    <ul>
+        {% for region in regions %}
+            <li>{{ region }}</li>
+        {% empty %}
+            <li>No significant regions detected.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Result Image:</h3>
+    {% if output_image %}
+    <h3>Comparison Result:</h3>
+    <img src="{{ output_image }}" alt="Comparison Image" style="max-width: 100%; border: 1px solid #ccc;">
+{% endif %}
+</body>
+</html>
