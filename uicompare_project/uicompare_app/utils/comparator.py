@@ -79,31 +79,32 @@ def save_comparison_figure(ref_img, test_img, highlighted_img, ssim_diff, abs_di
     elif highlight_color == "blue":
         abs_diff_rgb[:, :, 2] = np.maximum(abs_diff_rgb[:, :, 2], abs_diff_rgb[:, :, 1])
 
-    plt.figure(figsize=(20, 5))
-    plt.subplot(1, 5, 1)
+    plt.figure(figsize=(36, 12)) 
+
+    plt.subplot(1, 3, 1)
     plt.imshow(ref_img_rgb)
-    plt.title("Reference")
+    plt.title("Reference UI", fontsize=16)
     plt.axis('off')
 
-    plt.subplot(1, 5, 2)
+    plt.subplot(1, 3, 2)
     plt.imshow(test_img_rgb)
-    plt.title("Test")
+    plt.title("Test UI", fontsize=16)
     plt.axis('off')
 
-    plt.subplot(1, 5, 3)
+    plt.subplot(1, 3, 3)
     plt.imshow(highlighted_img_rgb)
-    plt.title("Highlighted")
+    plt.title("Highlighted Changes", fontsize=16)
     plt.axis('off')
 
-    plt.subplot(1, 5, 4)
-    plt.imshow(ssim_diff, cmap='gray')
-    plt.title("SSIM Difference")
-    plt.axis('off')
+    # plt.subplot(1, 5, 4)
+    # plt.imshow(ssim_diff, cmap='gray')
+    # plt.title("SSIM Difference")
+    # plt.axis('off')
 
-    plt.subplot(1, 5, 5)
-    plt.imshow(abs_diff_rgb)
-    plt.title("Pixel Difference")
-    plt.axis('off')
+    # plt.subplot(1, 5, 5)
+    # plt.imshow(abs_diff_rgb)
+    # plt.title("Pixel Difference")
+    # plt.axis('off')
 
     metrics_text = f"SSIM: {ssim_score:.4f}\nChanged: {changed_pixels:,}/{total_pixels:,}\n({percentage_changed:.2f}%)"
     plt.gcf().text(0.5, 0.05, metrics_text, ha='center', fontsize=12,

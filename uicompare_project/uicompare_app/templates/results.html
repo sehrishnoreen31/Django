@@ -1,31 +1,46 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Comparison Results</title>
-</head>
-<body>
-    <h1>UI Comparison Result</h1>
+{% extends "index.html" %}
 
-    <p><strong>SSIM Score:</strong> {{ ssim_score }}</p>
-    <p><strong>Total Pixels:</strong> {{ total_pixels }}</p>
-    <p><strong>Changed Pixels:</strong> {{ changed_pixels }}</p>
-    <p><strong>Percentage Changed:</strong> {{ percent_changed }}%</p>
+{% block title %}<title>UIDeltaX - Results</title>{% endblock %}
 
-    <h3>Regions of Change:</h3>
-    <ul>
-        {% for region in regions %}
-            <li>{{ region }}</li>
-        {% empty %}
-            <li>No significant regions detected.</li>
-        {% endfor %}
-    </ul>
+{% block content %}
+<div class="container results-container">
+    <header class="page-header">
+        <h1>UI Comparison Report</h1>
+        <p class="subheading">Detailed analysis of visual changes between the uploaded UI snapshots</p>
+    </header>
 
-    <h3>Result Image:</h3>
+    <section class="summary-section">
+        <h2>Summary Metrics</h2>
+        <ul class="metrics-list">
+            <li><strong>SSIM Score:</strong> {{ ssim_score }}</li>
+            <li><strong>Total Pixels:</strong> {{ total_pixels }}</li>
+            <li><strong>Changed Pixels:</strong> {{ changed_pixels }}</li>
+            <li><strong>Percentage Changed:</strong> {{ percent_changed }}%</li>
+        </ul>
+    </section>
+
+    <section class="regions-section">
+        <h2>Regions of Change</h2>
+        {% if regions %}
+        <ul class="regions-list">
+            {% for region in regions %}
+                <li>{{ region }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no-change">No significant regions detected.</p>
+        {% endif %}
+    </section>
+
     {% if output_image %}
-    <h3>Comparison Result:</h3>
-    <img src="{{ output_image }}" alt="Comparison Image" style="max-width: 100%; border: 1px solid #ccc;">
-{% endif %}
-</body>
-</html>
+    <section class="image-section">
+        <h2>Visual Difference Output</h2>
+        <img src="{{ output_image }}" alt="Comparison Image" class="result-image" />
+    </section>
+    <a href="{{ output_image }}" download="uideltax_result.png" class="submit-btn">
+    Download Output Image
+    </a>
+    {% endif %}
+    
+</div>
+{% endblock %}

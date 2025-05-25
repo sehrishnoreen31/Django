@@ -1,36 +1,40 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <div class="form-container">
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                Reference Image: <input type="file" name="ref_image"><br>
-                Test Image: <input type="file" name="test_image"><br>
-                Highlight Color:
-                <select name="color">
-                    <option value="green">Green</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="gray">Gray</option>
-                </select><br>
-                <input type="submit" value="Compare">
-            </form>
+{% extends "index.html" %}
 
-                {% if result_image %}
-                <h3>Comparison Result:</h3>
-                <img src="{{ result_image }}" alt="Result">
-                {% endif %}
+{% block title %}<title>UIDeltaX-Compare</title>{% endblock %}
 
-        </div>
-    </main>
-</body>
-</html>
+{% block content %}
+<header>
+    <h1>UIDeltaX-Tester</h1>
+    <p class="subheading">Upload your UI snapshots to detect visual differences</p>
+</header>
+
+<section class="form-section">
+    <form method="post" enctype="multipart/form-data" class="compare-form">
+        {% csrf_token %}
+        
+        <label for="ref_image">Reference Image:</label>
+        <input type="file" name="ref_image" id="ref_image" required>
+
+        <label for="test_image">Test Image:</label>
+        <input type="file" name="test_image" id="test_image" required>
+
+        <label for="color">Highlight Color:</label>
+        <select name="color" id="color">
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="gray">Gray</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Compare Now</button>
+    </form>
+</section>
+
+{% if result_image %}
+<section class="result-section">
+    <h2>Comparison Result</h2>
+    <img src="{{ result_image }}" alt="Result Image" class="result-image" />
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,428 @@
+:root {
+    --primary: #52357B;
+    --accent: #466159;
+    --info: #648DB3;
+    --highlight: #B2D8CE;
+    --text: #1E1E2F;
+    --bg: #ffffff;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    padding-bottom: 40px;
+}
+
+/* Global container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0;
+    max-width: 110px;
+    margin: 1.5rem 0 1.5rem 30px; /* Added left margin: 20px */
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.logo a {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(82, 53, 123, 0.3);
+    display: flex;
+    gap: 0.1em;
+}
+
+.logo a span {
+    transition: all 0.3s ease;
+}
+
+/* Different colors per letter using palette */
+.letter1 {
+    color: #52357B; /* Primary */
+}
+.letter2 {
+    color: #5459AC; /* Accent */
+}
+.letter3 {
+    color: #648DB3; /* Info */
+}
+.letter4 {
+    color: #B2D8CE; /* Highlight */
+}
+
+.logo:hover a span {
+    transform: scale(1.2);
+    text-shadow: 2px 2px 4px rgba(82, 53, 123, 0.7);
+}
+
+/* Optional: staggered hover effect */
+.logo:hover a .letter1 {
+    transition-delay: 0s;
+}
+.logo:hover a .letter2 {
+    transition-delay: 0.05s;
+}
+.logo:hover a .letter3 {
+    transition-delay: 0.1s;
+}
+.logo:hover a .letter4 {
+    transition-delay: 0.15s;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.subheading, .tagline {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: 8px;
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center; /* Center content */
+    box-shadow: 0 10px 20px var(--shadow);
+    margin: 2rem auto 2.5rem;
+    max-width: 900px;
+    /* Add line height to avoid button overlapping */
+    line-height: 1.6;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block; /* So it respects width and margin */
+    margin-top: 1.5rem; /* Add vertical spacing */
+    background-color: #6c9488;
+    color: #fff;
+    padding: 12px 28px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #577c71;
+    transform: scale(1.05);
+}
+.features {
+    background-color: var(--card-bg);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px var(--shadow);
+    text-align: center;
+    color: var(--primary);
+}
+
+.features h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.features ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem 3rem;
+}
+
+.features ul li {
+    background: var(--highlight);
+    color: var(--text);
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    min-width: 220px;
+    max-width: 280px;
+    transition: background-color 0.3s ease;
+}
+
+.features ul li:hover {
+    background-color: var(--accent);
+    color: #fff;
+    cursor: default;
+}
+
+/* Form Section */
+.container.upload-container {
+    max-width: 600px;
+    margin: 2rem auto 4rem auto;
+    padding: 1.5rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px var(--shadow);
+    box-sizing: border-box;
+}
+
+/* Form Styling */
+.compare-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Labels */
+.compare-form label {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+}
+
+/* File Inputs */
+.compare-form input[type="file"] {
+    padding: 0.4rem;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    background-color: var(--bg);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.compare-form input[type="file"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+/* Select dropdown */
+.compare-form select {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--primary);
+    background-color: var(--bg);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.compare-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    align-self: center;
+    max-width: 200px;
+}
+
+.submit-btn{
+    text-decoration: none;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    box-shadow: 0 6px 18px rgba(82, 53, 123, 0.6);
+    outline: none;
+}
+
+/* Results */
+.container.results-container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 1.5rem 3rem 1.5rem; /* Top, Right, Bottom, Left padding */
+    box-sizing: border-box;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.page-header .subheading {
+    font-size: 1.125rem;
+    color: var(--secondary-text);
+    font-weight: 400;
+}
+
+/* Section Base Styling */
+.summary-section,
+.regions-section,
+.image-section {
+    background-color: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow);
+    margin-bottom: 2rem;
+    border-left: 6px solid var(--primary);
+}
+
+/* Section Titles */
+.summary-section h2,
+.regions-section h2,
+.image-section h2 {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Metrics List */
+.metrics-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.125rem;
+    color: var(--text);
+}
+
+.metrics-list li {
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+/* Regions List */
+.regions-list {
+    list-style: disc inside;
+    padding-left: 1rem;
+    font-size: 1.125rem;
+    color: var(--text);
+}
+
+.regions-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* No Change Text */
+.no-change {
+    font-style: italic;
+    color: var(--info);
+    font-size: 1.1rem;
+}
+
+/* Result Image */
+.result-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid var(--highlight);
+    display: block;
+    margin-top: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Responsive Adjustment */
+@media (max-width: 600px) {
+    .container.results-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .summary-section,
+    .regions-section,
+    .image-section {
+        padding: 1rem 1rem;
+        border-left-width: 4px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .summary-section h2,
+    .regions-section h2,
+    .image-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+footer{
+    text-align: center;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .hero, .form-section, .result-section {
+        padding: 1.5rem 1rem;
+    }
+    .logo {
+        max-width: 140px;
+        padding: 10px 20px;
+        font-size: 1.8rem;
+    }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

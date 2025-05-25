@@ -3,6 +3,9 @@ from django.http import HttpResponseBadRequest
 from .utils.comparator import load_and_preprocess, highlight_differences, calculate_pixel_differences, save_comparison_figure
 from django.core.files.storage import FileSystemStorage
 
+def home(request):
+    return render(request, 'index.html')
+
 def compare_images_view(request):
     if request.method == "POST":
         ref_img_file = request.FILES.get('ref_image')

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% block title %}<title>UIDeltaX-Tester</title>{% endblock %}
+</head>
+<body>
+    <div class="logo">
+        <a href="{% url 'home' %}">
+            <span class="letter1">U</span><span class="letter2">D</span><span class="letter3">X</span><span class="letter4">T</span>
+        </a>
+    </div>
+
+
+    {% block content %}
+    <header>
+        <h1>UIDeltaX-Tester</h1>
+        <p class="tagline">Visual Regression Detection for Smarter Interfaces</p>
+    </header>
+
+    <section class="hero">
+        <p>Upload two UI screenshots and instantly detect what changed: color shifts, element moves, text updates, and more.</p>
+        <a class="cta-button" href="{% url 'compare' %}">Test Now</a>
+    </section>
+
+    <section class="features">
+        <h2>What UIDeltaX Offers</h2>
+        <ul>
+            <li>Pixel-level change detection</li>
+            <li>Smart UI difference visualization</li>
+            <li>SSIM & percentage reports</li>
+            <li>Result images with bounding boxes</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 - sehrishnoreen</p>
+    </footer>
+    {% endblock %}
+  </div>
+</body>
+</html>
