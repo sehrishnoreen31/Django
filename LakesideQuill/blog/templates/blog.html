@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
     {% block title %}<title>Lakeside Quill</title>{% endblock %}
 </head>
 <body>
@@ -27,7 +27,6 @@
                         <p class="upload-date">{{blog.date}}</p>
                         <h2 class="title"><a href="">{{blog.title}}</a></h2>
                         <a href="{% url 'details' blog.id %}"><button>Read</button></a>
-                        
                     </div>
                 {% endfor %}
             </div>

@@ -6,7 +6,12 @@
                 <div class="blog-detail">
                     <img src="{{blog.image.url}}" alt="lake-image">
                     <p>{{blog.paragraph}}</p>
-                    <p>{{blog.date}}</p>
+                    <p>Last Updated: {{blog.date}}</p>
                 </div>
+                <div class="btns">
+                    <a href="{% url 'update_blog' blog.id %}"><button class="update-button">Update Blog</button></a>
+                <a href="{% url 'details' blog.id %}"><button class="delete-button">Delete Blog</button></a>
+                </div>
+                
             </div>
         {% endblock %}
