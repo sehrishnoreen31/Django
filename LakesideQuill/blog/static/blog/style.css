@@ -9,8 +9,11 @@ body{
     margin: 0 auto;
     background-color: #fffceb;
     background-repeat: no-repeat;
+    height: 100%;
 }
-
+main{
+    padding-bottom: 80px;
+}
 header{
     margin-bottom: 20px;
     display: flex;
@@ -63,16 +66,16 @@ nav a{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    flex: 0 0 calc(33.333% - 20px);
     gap: 5px;
     padding: 10px;
-    max-width: 300px;
     &:hover{
-        scale: 1.03;
+        scale: 1.01;
     }
 }
 
 .blog-post img{
-    width: 250px;
+    width: 300px;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
@@ -113,7 +116,7 @@ nav a{
     flex-wrap: wrap;
 }
 
-.update-button{
+.update-button, .cancel-button{
     padding: 5px 10px;
     color:#fffade;
     background-color: #006A67;
@@ -122,6 +125,8 @@ nav a{
     border-color: transparent;
     width: 10rem;
     border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
     &:hover{
         cursor: pointer;
         background-color: #054947;
@@ -138,8 +143,12 @@ nav a{
     border-radius: 5px;
     &:hover{
         cursor: pointer;
-        background-color: #054947;
+        background-color: #630303;
     }
+}
+
+.cancel{
+
 }
 
 .detail{
@@ -154,18 +163,18 @@ nav a{
     text-align: center;
 }
 
-.blog-detail{
-    padding: 0 10px;
+.blog-detail {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 10px;
     color: rgb(49, 48, 48);
     text-align: justify;
 }
 
+
 .blog-detail img{
+    margin: 10px auto;
     width: 70%;
     height: 300px;
     object-fit: cover;
@@ -246,12 +255,13 @@ nav a{
 
 footer{
     margin-top: 20px;
-    padding: 20px;
+    padding: 10px;
     display: flex;
+    position: fixed;
     justify-content: center;
     color: rgb(243, 243, 250);
     background-color: #003161;
     bottom: 0;
-    right: 0;
+    right:0;
     left: 0;
 }

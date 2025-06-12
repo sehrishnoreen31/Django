@@ -11,15 +11,15 @@
 </div>
 
 <div class="form-data">
-    <form action="{% url 'update_blog' updated_blog.id %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'update_blog' selected_blog.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <h2>Update Values</h2>
         <p><label for="title">Blog Title:</label></p>
-        <input type="text" name="title" id="title" value="{{updated_blog.title}}" required>
+        <input type="text" name="title" id="title" value="{{selected_blog.title}}" required>
         <p><label for="blog-img">Blog Image:</label></p>
-        <input type="file" name="blog-img" id="blog-img" value="{{updated_blog.image}}" required>
+        <input type="file" name="blog-img" id="blog-img" value="{{selected_blog.image}}" required>
         <p><label for="blog-content">Blog Content:</label></p>
-        <textarea name="blog-content" id="blog-content" cols="30" rows="10">{{updated_blog.paragraph}}</textarea>
+        <textarea name="blog-content" id="blog-content" cols="30" rows="10">{{selected_blog.paragraph}}</textarea>
         <br>
         <input type="submit" value="Update">
     </form>

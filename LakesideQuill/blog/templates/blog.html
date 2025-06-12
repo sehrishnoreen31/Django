@@ -21,14 +21,19 @@
 
         {% block content %}
             <div class="container">
-                {% for blog in blogs %}
-                    <div class="blog-post">
-                        <img src="{{blog.image.url}}" alt="lake-image">
-                        <p class="upload-date">{{blog.date}}</p>
-                        <h2 class="title"><a href="">{{blog.title}}</a></h2>
-                        <a href="{% url 'details' blog.id %}"><button>Read</button></a>
-                    </div>
-                {% endfor %}
+                {% if blogs %}
+                    {% for blog in blogs %}
+                        <div class="blog-post">
+                            <img src="{{blog.image.url}}" alt="lake-image">
+                            <p class="upload-date">{{blog.date}}</p>
+                            <h2 class="title"><a href="">{{blog.title}}</a></h2>
+                            <a href="{% url 'details' blog.id %}"><button>Read</button></a>
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                        <p style="color: gray">No blogs to show</p>
+                {% endif %}
+                    
             </div>
         {% endblock %}
     </main>

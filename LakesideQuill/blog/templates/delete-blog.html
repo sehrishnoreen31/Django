@@ -1,0 +1,22 @@
+{% extends "blog.html" %}
+{% block title %}<title>Delete Blog</title>{% endblock %}
+{% block content %}
+<div class="message">
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+    <div class="form-data">
+        <form action="{% url 'delete_blog' selected_blog.id %}" method="post">
+            {% csrf_token %}
+            <h2>Are you sure you want to delete the blog "{{ selected_blog.title }}"?</h2><br>
+            <div class="btns">
+                <a href="{% url 'details' selected_blog.id %}" class="cancel-button">Cancel</a>
+                <button type="submit" class="delete-button">Delete</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
