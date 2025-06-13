@@ -6,7 +6,7 @@ from django.contrib.messages import get_messages
 from django.contrib import messages
 from django.utils import timezone
 
-# Create your views here.
+
 def blog(request):
     blogs = Blog.objects.all().order_by('-date', '-id')
     return render(request, 'blog.html', {'blogs': blogs})
@@ -68,3 +68,10 @@ def delete_blog(request, id):
         # not calling save after delete, it may prevent deletion
         return redirect('blog')
     return render(request, 'delete-blog.html', {'selected_blog': selected_blog})
+
+def custom_404_view(request, exception):
+    return render(request, '404handler.html', status=404)
+
+# Your custom 500 handler for the blog app
+def custom_500_view(request):
+    return render(request, '500handler.html', status=500)
